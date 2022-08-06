@@ -18,6 +18,8 @@ html, body {
 textarea {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 14px;
+    border: 1px solid rgb(195, 195, 195);
+    outline: none;
 }
 
 h1 {
@@ -68,7 +70,7 @@ form label textarea {
     width: 100%;
     min-height: 80px;
     padding: 15px;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 
 #output {
@@ -110,4 +112,27 @@ form button::before {
 
 #copy::before {
     background-image: url(../img/copy-icon.png);
+}
+
+textarea + span.error {
+    display: none;
+}
+
+textarea.error {
+    border: 2px solid rgb(200, 44, 45);
+}
+
+textarea.success {
+    border: 2px solid rgb(20, 204, 51);
+}
+
+textarea.error + span.error {
+    display: block;
+    color: rgb(200, 44, 45);
+    font-weight: bold;
+}
+
+textarea.error::after {
+    display: block;
+    content: 'Invalid data';
 }

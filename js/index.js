@@ -1,5 +1,5 @@
 $(function() {
-    function getDoorsAndDestinations(data) {
+    function getDestinations(data) {
         const strings = data.split(/\s+/);
         let destination = null;
         const doors = {};
@@ -96,9 +96,34 @@ $(function() {
         return b[1].adjustedDensity - a[1].adjustedDensity;
     }
 
+    $('#routing-profile-data').on('keyup paste', function() {
+        const destinations = getDestinations($(this).val());
+
+        if(Object.keys(destinations).length === 0) {
+            $(this).attr('class', 'error');
+        } else {
+            $(this).attr('class', 'success');
+        }
+    });
+
+    $('#density-data').on('keyup paste', function() {
+        const densities = getDensities($(this).val());
+
+        if(Object.keys(densities).length === 0) {
+            $(this).attr('class', 'error');
+        } else {
+            $(this).attr('class', 'success');
+        }
+    });
+
     $('#process').on('click', function() {
-        const doors = getDoorsAndDestinations($('#routing-profile-data').val());
+        const doors = getDestinations($('#routing-profile-data').val());
         const densities = getDensities($('#density-data').val());
+
+        if(Object.keys(doors).length === 0 ||
+           Object.keys(densities).length === 0) {
+            return false;
+        }
 
         const north = {};
         const south = {};

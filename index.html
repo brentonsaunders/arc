@@ -12,19 +12,21 @@
         <div id="wrapper">
             <h1>Fluid Load Flow Allocation</h1>
             <p>Pulls flow allocation data for fluid load doors from the Flow Sortation Dashboard and Fulfillment Load Balancer.</p>
-            <p>Note: The Flow Sortation Dashboard is deprecated, but used because it displays all the routing information on a single page.</p>
+            <p>Note: The Flow Sortation Dashboard is deprecated, but used here because it displays all the routing information on a single page.</p>
             <form>
                 <ol>
                     <li>
                         <label>
                             <p>Open the <a target="_blank" href="https://flow-sortation-na.amazon.com/TEB9/">Flow Sortation Dashboard</a>. Ctrl-A / Ctrl-C to select and copy <strong>all</strong> of the text on the page, and then paste it into the box below.</p>
                             <textarea id="routing-profile-data"></textarea>
+                            <span class="error">Invalid input</span>
                         </label>
                     </li>
                     <li>
                         <label>
                             <p>Open the <a target="_blank" href="https://f2p-lb-na.amazon.com/target-settings/NA_CROSSDOCK_TEB9/ITS-Arc/1">Fulfillment Load Balancer</a>. Ctrl-A / Ctrl-C to select and copy <strong>all</strong> of the text on the page, and then paste it into the box below.</p>
                             <textarea id="density-data"></textarea>
+                            <span class="error">Invalid input</span>
                         </label>
                     </li>
                     <li>
