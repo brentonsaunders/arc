@@ -155,4 +155,8 @@ $(function() {
 
         $('#output').val(string);
     });
+
+    $('#copy').on('click', function() {
+        navigator.clipboard.writeText($('#output').val());
+    });
 });
