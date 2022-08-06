@@ -96,7 +96,7 @@ $(function() {
         return b[1].adjustedDensity - a[1].adjustedDensity;
     }
 
-    $('#routing-profile-data').on('keyup paste', function() {
+    $('#destination-data').on('keyup paste', function() {
         const destinations = getDestinations($(this).val());
 
         if(Object.keys(destinations).length === 0) {
@@ -117,19 +117,19 @@ $(function() {
     });
 
     $('#process').on('click', function() {
-        const doors = getDestinations($('#routing-profile-data').val());
+        const destinations = getDestinations($('#destination-data').val());
         const densities = getDensities($('#density-data').val());
 
-        if(Object.keys(doors).length === 0 ||
+        if(Object.keys(destinations).length === 0 ||
            Object.keys(densities).length === 0) {
             return false;
         }
 
         const north = {};
         const south = {};
-        const destinationCounts = getDestinationCounts(doors);
+        const destinationCounts = getDestinationCounts(destinations);
 
-        for(const [door, destination] of Object.entries(doors)) {
+        for(const [door, destination] of Object.entries(destinations)) {
             // What side is the door on?
             const side = getSide(door);
 
