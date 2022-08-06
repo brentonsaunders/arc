@@ -87,3 +87,27 @@ form button {
     color: rgb(255, 255, 255);
     background-color: rgb(33, 132, 206);
 }
+
+#process,
+#copy {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+form button::before {
+    display: inline-block;
+    content: '';
+    background-size: 20px 20px;
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+#process::before {
+    background-image: url(../img/gear-icon.png);
+}
+
+#copy::before {
+    background-image: url(../img/copy-icon.png);
+}
