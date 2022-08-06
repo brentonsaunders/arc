@@ -20,6 +20,40 @@ textarea {
     font-size: 14px;
 }
 
+h1 {
+    font-size: 200%;
+    margin-bottom: 20px;
+}
+
+p {
+    line-height: 200%;
+}
+
+form ol {
+    list-style: none;
+    counter-reset: item;
+}
+
+form li {
+    counter-increment: item;
+    margin-bottom: 5px;
+}
+
+form li:before {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    content: counter(item);
+    width: 25px;
+    height: 25px;
+    background-color: rgb(33, 132, 206);
+    border-radius: 5px;
+    color: white;
+    text-align: center;
+    font-size: 80%;
+    font-weight: bold;
+}
+
 form label {
     display: block;
 }
@@ -41,16 +75,15 @@ form label textarea {
     height: 200px;
 }
 
-#process {
+form button {
     display: block;
-    width: 120px;
-    height: 35px;
-    margin-bottom: 15px;
-}
-
-#copy {
-    display: block;
-    width: 120px;
-    height: 35px;
-    margin-bottom: 15px;
+    width: 100%;
+    height: 40px;
+    margin: 10px 0;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+    background-color: rgb(33, 132, 206);
 }
